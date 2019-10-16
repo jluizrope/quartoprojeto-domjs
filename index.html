@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DOM - QUARTO PROJETO: Cálculo em Formulário</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			background-color: green;
+		}
+		form{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 30vw;
+			height: 300px;
+			background-color: red;
+			color: green;
+			border-radius: 45%;
+		}
+		h1{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<marquee><h1> ROUND CALCULATOR </h1></marquee>
+	</header>
+	<form onsubmit="calc(event)">
+		<input type="number" id="n1" required>
+		<input type="number" id="n2" required>
+		<button>CALC</button>
+		<p></p>
+	</form>
+	<script type="text/javascript">
+		function calc(event) {
+			event.preventDefault ();
+			const n1 = document.querySelector('#n1').value;
+			const n2 = document.querySelector('#n2').value;
+			const p = document.querySelector('p');
+
+			p.innerHTML = '<strong>SOMA =</strong>' + (parseInt(n1) + parseInt(n2));	
+		};
+	</script>
+</body>
+</html>
